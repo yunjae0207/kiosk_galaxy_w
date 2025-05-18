@@ -21,7 +21,7 @@ import sys
 # MyApp 
 class MyApp(App):
     def build(self):
-        Window.size = (1848, 2960)
+        Window.size = (1920, 1080)
         return Builder.load_file('screen.kv')
 
     def show_popup_store(self, item_text):
