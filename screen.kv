@@ -1,0 +1,1428 @@
+ScreenManager: #전체 화면 전환용 스크린 매니저
+    id: main_manager
+    Screen_Zero:
+        name: 'zero' 
+    Screen_Language:
+        name: 'language'
+    Screen_First:
+        name: 'first'   
+    Screen_Second:
+        name: 'second'
+    Screen_Third:
+        name: 'third'
+    Screen_Fourth:
+        name: 'fourth'
+    Screen_Fifth:
+        name: 'fifth'
+    Screen_Sixth:
+        name: 'sixth'
+    Screen_Seventh:
+        name: 'seventh'
+    Screen_Eighth:
+        name: 'eighth'
+    Screen_Ninth:
+        name: 'ninth'
+    Screen_Tenth:
+        name: 'tenth'
+    Screen_Eleventh:
+        name: 'eleventh'
+    Screen_Twelfth:
+        name: 'twelfth'
+
+<Screen_Zero>:
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Label:
+            text: "[color=F69D6A]CAUTogether[/color]  [color=08BD77]기획봉사단 7기[/color]"
+            markup: True
+            font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+            font_size: 70
+            pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+            color: 0, 0, 0, 1
+        Button:
+            pos_hint: {'center_x': 0.5, 'center_y': 0.45}
+            size_hint: None, None
+            size: 1500, 1500  # width=200, height=100
+            background_normal: 'images/openning.png'
+            background_down: 'images/openning.png'
+            color: 0, 0, 0, 1
+            on_release: root.manager.current = 'language'
+
+<Screen_Language>:
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        BoxLayout:
+            pos_hint: {'center_x': 0.5, 'center_y':0.7}
+            spacing: 30
+            padding: 50
+            canvas.before:
+            Button:
+                canvas.before:
+                    Color: 
+                        rgba: 0, 0, 0, 1  # 검정색 스트로크 색
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]  # 둥근 정도 (숫자 높을수록 둥글게)
+                text: "한글"
+                font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                font_size: 50
+                size_hint: (0.4, 0.5)
+                background_normal: ''
+                background_down: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release: root.manager.current = 'first'
+                canvas.after:
+                    Color:
+                        rgba: 0, 0, 0, 1  # 테두리 색 (검정)
+                    Line:
+                        width: 2
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 20)  # 마지막 숫자가 둥글
+            Button:
+                canvas.before:
+                    Color: 
+                        rgba: 0, 0, 0, 1  # 검정색 스트로크 색
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]  # 둥근 정도 (숫자 높을수록 둥글게)
+                text: "English"
+                font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                font_size: 50
+                size_hint: (0.4, 0.5)
+                background_normal: ''
+                background_down: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release: root.manager.current = 'seventh'
+                canvas.after:
+                    Color:
+                        rgba: 0, 0, 0, 1  # 테두리 색 (검정)
+                    Line:
+                        width: 2
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 20)  # 마지막 숫자가 둥글기
+
+<Screen_First>: #진행여부
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Image:
+            pos_hint: {'center_x': 0.5, 'center_y':0.6}
+            source: 'images/hello.png'
+            allow_stretch: True
+            keep_ratio: True
+            size_hint: None, None
+            size: 1500, 1500
+        BoxLayout:
+            orientation: 'horizontal'
+            padding: 50
+            spacing: 100
+            size_hint: 0.4, 0.4
+            pos_hint: {'center_x': 0.5, 'center_y':0.25}
+            canvas.before:
+            Button:
+                canvas.before:
+                    Color: 
+                        rgba: 0, 0, 0, 1  # 검정색 스트로크 색
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]  # 둥근 정도 (숫자 높을수록 둥글게)
+                text: "네"
+                font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                font_size: 50
+                size_hint: (0.15, 0.3)
+                background_normal: ''
+                background_down: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release: root.manager.current = 'second'
+                canvas.after:
+                    Color:
+                        rgba: 0, 0, 0, 1  # 테두리 색 (검정)
+                    Line:
+                        width: 2
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 20)  # 마지막 숫자가 둥글기
+            Button:
+                canvas.before:
+                    Color: 
+                        rgba: 0, 0, 0, 1  # 검정색 스트로크 색
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]  # 둥근 정도 (숫자 높을수록 둥글게)
+                text: "아니오"
+                font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                font_size: 50
+                size_hint: (0.15, 0.3)
+                background_normal: ''
+                background_down: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release: root.manager.current = 'zero'
+                canvas.after:
+                    Color:
+                        rgba: 0, 0, 0, 1  # 테두리 색 (검정)
+                    Line:
+                        width: 2
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 20)  # 마지막 숫자가 둥글기
+
+<Screen_Second>: #포장or매장
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        BoxLayout:
+            pos_hint: {'center_x': 0.5, 'center_y':0.7}
+            spacing: 30
+            padding: 50
+            canvas.before:
+            Button:
+                size_hint: (0.4, 0.5)
+                background_normal: 'images/takeout.png'
+                background_down: 'images/takeout.png'
+                on_release: root.manager.current = 'third'
+            Button:
+                background_normal: 'images/here.png'
+                background_down: 'images/here.png'
+                size_hint: (0.4, 0.5)
+                on_release: root.manager.current = 'third'
+
+<Screen_Third>: #내용 고르기
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Button:
+            background_normal: 'images/exit.png'
+            background_down: 'images/exit.png'
+            size_hint: (0.06, 0.07)
+            pos_hint: {'right': 0.06, 'top': 0.99}
+            on_release: 
+                app.delete_all_items()
+                root.manager.current = 'zero'
+        Button:
+            background_normal: 'images/store.png'
+            background_down: 'images/store.png'
+            size_hint: (0.06, 0.07)
+            pos_hint: {'right': 0.99, 'top': 0.99}
+            on_release: root.manager.current = 'fourth'
+        
+        BoxLayout:
+            orientation: 'vertical'
+            pos_hint: {'center_x': 0.07, 'center_y':0.6}
+            size_hint: (0.1, 0.6)
+            Button:
+                background_normal: 'images/love.png'
+                background_down: 'images/love.png'
+                background_color: 1, 1, 1, 1
+                size_hint: (1, 0.25)
+                on_release: root.ids.sub_screen.current = 'sub_first'
+            Button:
+                background_normal: 'images/leisure.png'
+                background_down: 'images/leisure.png'
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                size_hint: (1, 0.25)
+                on_release: root.ids.sub_screen.current = 'sub_second'
+            Button:
+                background_normal: 'images/special.png'
+                background_down: 'images/special.png'
+                size_hint: (1, 0.25)
+                on_release: root.ids.sub_screen.current = 'sub_third'
+            Button:
+                background_normal: 'images/achievement.png'
+                background_down: 'images/achievement.png'
+                size_hint: (1, 0.25)
+                on_release: root.ids.sub_screen.current = 'sub_fourth'
+        ScreenManager: #서브 스크린 매니저
+            id: sub_screen
+            size_hint: (0.8, 0.9)
+            pos_hint: {'center_x': 0.6, 'center_y':0.5}
+            Sub_First:
+                name: 'sub_first'
+            Sub_Second:
+                name: 'sub_second'
+            Sub_Third:
+                name: 'sub_third'
+            Sub_Fourth:
+                name: 'sub_fourth'
+
+<Screen_Fourth>: #장바구니
+    rv: rv
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        RecycleView:
+            id: rv
+            size_hint: (1, 0.55)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.55}
+            viewclass: 'CartItem'
+            scroll_type: ['bars', 'content']
+            bar_width: 10
+            font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+            RecycleBoxLayout:
+                default_size: None, dp(100)
+                default_size_hint: 1, None
+                size_hint_y: None
+                height: self.minimum_height
+                orientation: 'vertical'
+                font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+        BoxLayout:
+            spacing: 10
+            pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+            size_hint: (0.5, 0.5)
+            Button:
+                size_hint: (0.5, 0.5)
+                background_normal: 'images/pay.png'
+                background_down: 'images/pay.png'
+                on_release: root.manager.current = 'fifth'
+                
+            Button:
+                size_hint: (0.5, 0.5)
+                background_normal: 'images/more2.png'
+                background_down: 'images/more2.png'
+                on_release: root.manager.current = 'third'         
+
+<Screen_Fifth>: #내용 고르기
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Button:
+            background_normal: 'images/more.png'
+            background_down: 'images/more.png'
+            size_hint: (0.09, 0.1)
+            pos_hint: {'right': 0.09, 'top': 0.99}
+            on_release: root.manager.current = 'third'
+        Button:
+            background_normal: 'images/store.png'
+            background_down: 'images/store.png'
+            size_hint: (0.07, 0.1)
+            pos_hint: {'right': 0.99, 'top': 0.99}
+            on_release: root.manager.current = 'fourth'
+        BoxLayout:
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            size_hint: (0.5,0.5)
+            orientation:'vertical'
+            BoxLayout:
+                spacing: 20
+                Button_Pay:
+                    text: '신용카드'
+                    background_normal: 'images/card.png'
+                    background_down: 'images/card.png'
+                Button_Pay:
+                    text: '모바일'
+                    background_normal: 'images/apple.png'
+                    background_down: 'images/apple.png'
+            BoxLayout:
+                spacing: 20
+                Button_Pay:
+                    text: '중앙포인트'
+                    background_normal: 'images/middle.png'
+                    background_down: 'images/middle.png'
+                Button_Pay:
+                    text: '현금'
+                    background_normal: 'images/cash.png'
+                    background_down: 'images/cash.png'
+        
+<Screen_Sixth>: #첫번째 화면 기획봉사단 사진 누르면 시작
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Image:
+            source: 'images/bye.png'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            size: 3000, 3000
+        Button:
+            id: end_button
+            text: ''
+            font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+            font_size: 40
+            background_normal: ''
+            background_down: ''
+            background_color: 1, 1, 1, 1
+            color: 0, 0, 0, 1
+            size_hint: (0.00001, 0.000001)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.1}
+            on_release: 
+                root.manager.current = 'zero'
+                app.delete_all_items()
+
+<Popup_Store>:  # 팝업 정의. @Popup은 상속 의미  #ids는 직계 자식 까지만 된다. 따라서 ScreenManager까지만 접근 가능    ids can ~ child, so we can use this screen
+    popup_store_label_first: popup_store_label_first
+    title: ""
+    title_size: 0
+    separator_height: 0
+    size_hint: 0.9, 0.9
+    auto_dismiss: False
+    id: popup_root
+    ScreenManager:
+        id: popup_store_screen_manager
+        Screen:
+            name: "popup_first"
+            id: popup_store_first_screen
+            FloatLayout:
+                id: layout_first
+                size_hint: 1, 1           
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}  
+                Label:
+                    id: popup_store_label_first
+                    text : ''
+                    font_size: 60
+                    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                    color: 1, 1, 1, 1
+                    size_hint_y: None
+                    height: self.texture_size[1]+dp(5)
+                    halign: 'center'
+                    valign: 'middle'
+                    text_size: self.width, None
+                    pos_hint: {'center_x': 0.5, 'center_y':0.93}
+                Label:
+                    pos_hint: {'center_x': 0.15, 'center_y':0.78}
+                    size_hint: 1, 0.2
+                    text : '시간'
+                    font_size: 60
+                    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                    color: 1, 1, 1, 1
+                    size_hint_y: None
+                    height: self.texture_size[1]+dp(5)
+                    halign: 'center'
+                    valign: 'middle'
+                    text_size: self.width, None
+                BoxLayout:
+                    pos_hint: {'center_x': 0.55, 'center_y':0.83}
+                    size_hint: 0.6, 0.2
+                    Button_Plus:
+                        text: "12H"
+                    Button_Plus:
+                        text: "24H"
+                Label:
+                    pos_hint: {'center_x': 0.15, 'center_y':0.63}
+                    size_hint: 1, 0.2
+                    text : '행운'
+                    font_size: 60
+                    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                    color: 1, 1, 1, 1
+                    size_hint_y: None
+                    height: self.texture_size[1]+dp(20)
+                    halign: 'center'
+                    valign: 'middle'
+                    text_size: self.width, None
+                BoxLayout:
+                    pos_hint: {'center_x': 0.55, 'center_y':0.68}
+                    size_hint: 0.6, 0.2
+                    Button_Plus:
+                        text: "0%"
+                    Button_Plus:
+                        text: "50%"
+                    Button_Plus:
+                        text: "100%"
+                Label:
+                    pos_hint: {'center_x': 0.15, 'center_y':0.48}
+                    size_hint: 0.5, 0.2
+                    text : '날씨'
+                    font_size: 60
+                    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                    color: 1, 1, 1, 1
+                    size_hint_y: None
+                    height: self.texture_size[1]+dp(5)
+                    halign: 'center'
+                    valign: 'middle'
+                    text_size: self.width, None
+                BoxLayout:
+                    pos_hint: {'center_x': 0.55, 'center_y':0.53}
+                    size_hint: 0.6, 0.2
+                    Button_Plus:
+                        text: "맑음"
+                    Button_Plus:
+                        text: "흐림"
+                    Button_Plus:
+                        text: "눈"
+                    Button_Plus:
+                        text: "비"
+                Label:
+                    pos_hint: {'center_x': 0.15, 'center_y':0.34}
+                    size_hint: 1, 0.2
+                    text : '분위기'
+                    font_size: 60
+                    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                    color: 1, 1, 1, 1
+                    size_hint_y: None
+                    height: self.texture_size[1]+dp(5)
+                    halign: 'center'
+                    valign: 'middle'
+                    text_size: self.width, None
+                BoxLayout:
+                    pos_hint: {'center_x': 0.55, 'center_y':0.38}
+                    size_hint: 0.6, 0.2
+                    Button_Plus:
+                        text: "활기차고 에너지 넘치는 하루"
+                    Button_Plus:
+                        text: "조용하고 잔잔한 하루"
+                BoxLayout:
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.1}
+                    size_hint: 0.5, 0.12
+                    padding: 20
+                    spacing: 50
+                    Button:
+                        font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                        font_size: 50
+                        text: "장바구니 담기"
+                        size_hint: 0.15, 1
+                        on_release: 
+                            app.add_item()
+                            root.ids.popup_store_screen_manager.current = 'popup_second'
+                    Button:
+                        font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                        font_size: 50
+                        text: "취소"
+                        size_hint: 0.15, 1
+                        on_release: root.dismiss()
+        Screen:
+            name: "popup_second"
+            FloatLayout:
+                Label:
+                    pos_hint: {'center_x': 0.5, 'center_y':0.8}
+                    id: popup_label_second
+                    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                    font_size: 60
+                    text: "장바구니로 이동하시겠습니까?"
+                BoxLayout:
+                    pos_hint: {'center_x': 0.5, 'center_y':0.2}
+                    orientation: 'horizontal'
+                    size_hint: 0.4, 0.3
+                    padding: 2
+                    spacing: dp(50)
+                    Button:
+                        font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                        font_size: 50
+                        text: "장바구니 이동"
+                        size_hint: 0.3, 0.5
+                        on_release: 
+                            root.dismiss()
+                            app.change_mainscreen_fourth()
+                    Button:
+                        font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                        font_size: 50
+                        text: "계속 쇼핑하기"
+                        size_hint: 0.3, 0.5
+                        on_release: root.dismiss()  
+
+<Popup_Pay>:  # 팝업 정의. @Popup은 상속 의미
+    popup_pay_label_first: popup_pay_label_first
+    title: ""
+    title_size: 0
+    separator_height: 0
+    size_hint: 0.5, 0.4
+    auto_dismiss: False
+    id: popup_root
+    ScreenManager:
+        id: popup_pay_screen_manager
+        Screen:
+            name: "popup_first"
+            id: popup_pay_first_screen
+            FloatLayout:
+                id: layout_first
+                Label:
+                    id: popup_pay_label_first
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+                    text : ''
+                    font_size: 70
+                    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                    color: 1, 1, 1, 1
+                    size_hint_y: None
+                    height: self.texture_size[1]+dp(20)
+                    halign: 'center'
+                    valign: 'middle'
+                    text_size: self.width, None
+                BoxLayout:
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    size_hint: 0.5, 1
+                    padding: dp(10)
+                    spacing: dp(50)
+                    Button:
+                        font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                        font_size: 45
+                        text: "결제하기"
+                        size_hint: 0.4, 0.3
+                        on_release: 
+                            root.ids.popup_pay_screen_manager.current = 'popup_second'
+                            app.close_existing_popup(root)
+                    Button:
+                        font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                        font_size: 45
+                        text: "결제수단 변경"
+                        size_hint: 0.4, 0.3
+                        on_release: root.dismiss()
+        Screen:
+            name: "popup_second"
+            FloatLayout:
+                Label:
+                    id: popup_label_second
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.75}
+                    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                    font_size: 60
+                    text: "결제중"
+                Button:
+                    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                    font_size: 30
+                    text: "취소"
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+                    size_hint: 0.2, 0.2
+                    on_release: 
+                        app.cancel_scheduled_popup_close()
+                        root.dismiss()
+                        app.change_mainscreen_fourth()
+
+<CartItem>:
+    orientation: 'horizontal'
+    padding: 10
+    spacing: 10
+    Label:
+        text: root.item_text
+        font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+        font_size: 55
+        color: 0, 0, 0, 1
+    Button:
+        background_normal: 'images/out.png'
+        background_down: 'images/out.png'
+        size_hint_x: 0.1
+        on_press: root.on_delete(root.item_text)
+
+<Button_Sub>: #3번째 스크린 서브 화면 버튼 
+    canvas.before:
+        Color:
+            rgba: 0, 0, 0, 1  # 검정색 스트로크 색
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [20]  # 둥근 정도 (숫자 높을수록 둥글게)
+    
+    text: f"{self.product_name} - {self.price}원"
+    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+    font_size: 40
+    background_normal: ''
+    background_down: ''
+    background_color: 1, 1, 1, 1
+    color: 0, 0, 0, 0
+    size_hint: None, None
+    size: 800, 800
+    on_release: app.show_popup_store(self.text)
+    
+    canvas.after:
+        Color:
+            rgba: 0, 0, 0, 1  # 테두리 색 (검정)
+        Line:
+            width: 2
+            rounded_rectangle: (self.x, self.y, self.width, self.height, 20)  # 마지막 숫자가 둥글기
+
+<Button_Pay>: #결제 선택지 버튼
+    size_hint: (0.5, 0.9)
+    on_release: app.show_popup_pay(self.text)
+    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+    color: 1, 1, 1, 0
+
+<Button_Plus>
+    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+    font_size: 45
+    on_press: root.change_color()
+    size_hint: 0.5, 0.5
+
+<Sub_First>: #3번째 화면 내용 선택지1
+    FloatLayout:
+        Button_Sub:
+            pos_hint: {'right': 0.415, 'top': 0.95}
+            background_normal: 'images/food.png'
+            background_down: 'images/food.png'
+            product_name: '맛있는 음식을 나눠먹는 하루'
+            price: 13000
+        Button_Sub:
+            pos_hint: {'right': 0.7, 'top': 0.95}
+            background_normal: 'images/parent.png'
+            background_down: 'images/parent.png'
+            product_name: '부모님과 대화를 나누는 하루'
+            price: 15000
+        Button_Sub:
+            pos_hint: {'right': 0.415, 'top': 0.47}
+            background_normal: 'images/photo.png'
+            background_down: 'images/photo.png'
+            product_name: '친구와 함께 사진 찍는 하루'
+            price: 14000
+        Button_Sub:
+            pos_hint: {'right': 0.7, 'top': 0.47}
+            background_normal: 'images/date.png'
+            background_down: 'images/date.png'
+            product_name: '연인과 함께 보내는 하루'
+            price: 16000
+
+<Sub_Second>: #3번째 화면 내용 선택지2
+    FloatLayout:
+        Button_Sub:
+            pos_hint: {'right': 0.415, 'top': 0.95}
+            background_normal: 'images/book.png'
+            background_down: 'images/book.png'
+            product_name: '좋아하는 책과 함께하는 하루'
+            price: 13000
+        Button_Sub:
+            pos_hint: {'right': 0.7, 'top': 0.95}
+            background_normal: 'images/music.png'
+            background_down: 'images/music.png'
+            product_name: '잔잔한 음악을 듣는 하루'
+            price: 12000
+        Button_Sub:
+            pos_hint: {'right': 0.415, 'top': 0.47}
+            background_normal: 'images/dog.png'
+            background_down: 'images/dog.png'
+            product_name: '여유롭게 산책하는 하루'
+            price: 14000
+        Button_Sub:
+            pos_hint: {'right': 0.7, 'top': 0.47}
+            background_normal: 'images/coffee.png'
+            background_down: 'images/coffee.png'
+            product_name: '향 좋은 커피를 마시는 하루'
+            price: 13000
+
+<Sub_Third>: #3번째 화면 내용 선택지3
+    FloatLayout:
+        Button_Sub:
+            pos_hint: {'right': 0.415, 'top': 0.95}
+            background_normal: 'images/cruise.png'
+            background_down: 'images/cruise.png'
+            product_name: '크루즈 여행가는 하루'
+            price: 16000
+        Button_Sub:
+            pos_hint: {'right': 0.7, 'top': 0.95}
+            background_normal: 'images/jump.png'
+            background_down: 'images/jump.png'
+            product_name: '번지점프하는 하루'
+            price: 14000
+        Button_Sub:
+            pos_hint: {'right': 0.415, 'top': 0.47}
+            background_normal: 'images/rollercoaster.png'
+            background_down: 'images/rollercoaster.png'
+            product_name: '가장 스릴있는 놀이기구 타는 하루'
+            price: 13000
+        Button_Sub:
+            pos_hint: {'right': 0.7, 'top': 0.47}
+            background_normal: 'images/sky.png'
+            background_down: 'images/sky.png'
+            product_name: '스카이 다이빙하는 하루'
+            price: 15000
+
+<Sub_Fourth>: #4번째 화면 내용 선택지4
+    FloatLayout:
+        Button_Sub:
+            pos_hint: {'right': 0.415, 'top': 0.95}
+            background_normal: 'images/lotto.png'
+            background_down: 'images/lotto.png'
+            product_name: '복권에 당첨되는 하루'
+            price: 15000
+        Button_Sub:
+            pos_hint: {'right': 0.7, 'top': 0.95}
+            background_normal: 'images/success.png'
+            background_down: 'images/success.png'
+            product_name: '원하는 직장에 취업하는 하루'
+            price: 14000
+        Button_Sub:
+            pos_hint: {'right': 0.415, 'top': 0.47}
+            background_normal: 'images/idea.png'
+            background_down: 'images/idea.png'
+            product_name: '창업 아이디어가 떠오르는 하루'
+            price: 12000
+        Button_Sub:
+            pos_hint: {'right': 0.7, 'top': 0.47}
+            background_normal: 'images/plan.png'
+            background_down: 'images/plan.png'
+            product_name: '계획을 모두 끝마치는 하루'
+            price: 13000
+
+<Screen_Seventh>: #진행여부
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Image:
+            pos_hint: {'center_x': 0.5, 'center_y':0.6}
+            source: 'images_en/hello_en.png'
+            allow_stretch: True
+            keep_ratio: True
+            size_hint: None, None
+            size: 1500, 1500
+        BoxLayout:
+            orientation: 'horizontal'
+            padding: 50
+            spacing: 100
+            size_hint: 0.4, 0.4
+            pos_hint: {'center_x': 0.5, 'center_y':0.25}
+            canvas.before:
+            Button:
+                canvas.before:
+                    Color: 
+                        rgba: 0, 0, 0, 1  # 검정색 스트로크 색
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]  # 둥근 정도 (숫자 높을수록 둥글게)
+                text: "Yes"
+                font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                font_size: 50
+                size_hint: (0.15, 0.3)
+                background_normal: ''
+                background_down: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release: root.manager.current = 'eighth'
+                canvas.after:
+                    Color:
+                        rgba: 0, 0, 0, 1  # 테두리 색 (검정)
+                    Line:
+                        width: 2
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 20)  # 마지막 숫자가 둥글기
+            Button:
+                canvas.before:
+                    Color: 
+                        rgba: 0, 0, 0, 1  # 검정색 스트로크 색
+                    RoundedRectangle:
+                        pos: self.pos
+                        size: self.size
+                        radius: [20]  # 둥근 정도 (숫자 높을수록 둥글게)
+                text: "No"
+                font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                font_size: 50
+                size_hint: (0.15, 0.3)
+                background_normal: ''
+                background_down: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release: root.manager.current = 'zero'
+                canvas.after:
+                    Color:
+                        rgba: 0, 0, 0, 1  # 테두리 색 (검정)
+                    Line:
+                        width: 2
+                        rounded_rectangle: (self.x, self.y, self.width, self.height, 20)  # 마지막 숫자가 둥글기
+
+<Screen_Eighth>: #포장or매장
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        BoxLayout:
+            pos_hint: {'center_x': 0.5, 'center_y':0.7}
+            spacing: 30
+            padding: 50
+            canvas.before:
+            Button:
+                size_hint: (0.4, 0.5)
+                background_normal: 'images_en/takeout_en.png'
+                background_down: 'images_en/takeout_en.png'
+                on_release: root.manager.current = 'ninth'
+            Button:
+                background_normal: 'images_en/here_en.png'
+                background_down: 'images_en/here_en.png'
+                size_hint: (0.4, 0.5)
+                on_release: root.manager.current = 'ninth'
+
+<Screen_Ninth>: #내용 고르기
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Button:
+            background_normal: 'images_en/exit_en.png'
+            background_down: 'images_en/exit_en.png'
+            size_hint: (0.06, 0.07)
+            pos_hint: {'right': 0.06, 'top': 0.99}
+            on_release: 
+                app.delete_all_items_en()
+                root.manager.current = 'zero'
+        Button:
+            background_normal: 'images_en/store_en.png'
+            background_down: 'images_en/store_en.png'
+            size_hint: (0.06, 0.07)
+            pos_hint: {'right': 0.99, 'top': 0.99}
+            on_release: root.manager.current = 'tenth'
+        
+        BoxLayout:
+            orientation: 'vertical'
+            pos_hint: {'center_x': 0.07, 'center_y':0.6}
+            size_hint: (0.1, 0.6)
+            Button:
+                background_normal: 'images_en/love_en.png'
+                background_down: 'images_en/love_en.png'
+                background_color: 1, 1, 1, 1
+                size_hint: (1, 0.25)
+                on_release: root.ids.sub_screen.current = 'sub_first_en'
+            Button:
+                background_normal: 'images_en/leisure_en.png'
+                background_down: 'images_en/leisure_en.png'
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                size_hint: (1, 0.25)
+                on_release: root.ids.sub_screen.current = 'sub_second_en'
+            Button:
+                background_normal: 'images_en/special_en.png'
+                background_down: 'images_en/special_en.png'
+                size_hint: (1, 0.25)
+                on_release: root.ids.sub_screen.current = 'sub_third_en'
+            Button:
+                background_normal: 'images_en/achievement_en.png'
+                background_down: 'images_en/achievement_en.png'
+                size_hint: (1, 0.25)
+                on_release: root.ids.sub_screen.current = 'sub_fourth_en'
+        ScreenManager: #서브 스크린 매니저
+            id: sub_screen
+            size_hint: (0.8, 0.9)
+            pos_hint: {'center_x': 0.6, 'center_y':0.5}
+            Sub_First_En:
+                name: 'sub_first_en'
+            Sub_Second_En:
+                name: 'sub_second_en'
+            Sub_Third_En:
+                name: 'sub_third_en'
+            Sub_Fourth_En:
+                name: 'sub_fourth_en'
+
+<Screen_Tenth>: #장바구니
+    rv: rv
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        RecycleView:
+            id: rv
+            size_hint: (1, 0.55)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.55}
+            viewclass: 'CartItem'
+            scroll_type: ['bars', 'content']
+            bar_width: 10
+            font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+            RecycleBoxLayout:
+                default_size: None, dp(100)
+                default_size_hint: 1, None
+                size_hint_y: None
+                height: self.minimum_height
+                orientation: 'vertical'
+                font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+        BoxLayout:
+            spacing: 10
+            pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+            size_hint: (0.5, 0.5)
+            Button:
+                size_hint: (0.5, 0.5)
+                background_normal: 'images_en/pay_en.png'
+                background_down: 'images_en/pay_en.png'
+                on_release: root.manager.current = 'eleventh'
+                
+            Button:
+                size_hint: (0.5, 0.5)
+                background_normal: 'images_en/more_en.png'
+                background_down: 'images_en/more_en.png'
+                on_release: root.manager.current = 'ninth'         
+
+<Screen_Eleventh>: #결제 수단
+    FloatLayout:
+        canvas.before:
+            Color: 
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Button:
+            background_normal: 'images_en/more_en.png'
+            background_down: 'images_en/more_en.png'
+            size_hint: (0.09, 0.1)
+            pos_hint: {'right': 0.09, 'top': 0.99}
+            on_release: root.manager.current = 'ninth'
+        Button:
+            background_normal: 'images_en/store_en.png'
+            background_down: 'images_en/store_en.png'
+            size_hint: (0.07, 0.1)
+            pos_hint: {'right': 0.99, 'top': 0.99}
+            on_release: root.manager.current = 'tenth'
+        BoxLayout:
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            size_hint: (0.5,0.5)
+            orientation:'vertical'
+            BoxLayout:
+                spacing: 20
+                Button_Pay_En:
+                    text: 'Credit-Card'
+                    background_normal: 'images_en/card_en.png'
+                    background_down: 'images_en/card_en.png'
+                Button_Pay_En:
+                    text: 'Mobile'
+                    background_normal: 'images_en/apple_en.png'
+                    background_down: 'images_en/apple_en.png'
+            BoxLayout:
+                spacing: 20
+                Button_Pay_En:
+                    text: 'CAU Point'
+                    background_normal: 'images_en/middle_en.png'
+                    background_down: 'images_en/middle_en.png'
+                Button_Pay_En:
+                    text: 'Cash'
+                    background_normal: 'images_en/cash_en.png'
+                    background_down: 'images_en/cash_en.png'
+        
+<Screen_Twelfth>: #첫번째 화면 기획봉사단 사진 누르면 시작
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Image:
+            source: 'images_en/bye_en.png'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            size: 3000, 3000
+        Button:
+            id: end_button
+            text: ''
+            font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+            font_size: 40
+            background_normal: ''
+            background_down: ''
+            background_color: 1, 1, 1, 1
+            color: 0, 0, 0, 1
+            size_hint: (0.00001, 0.0001)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.1}
+            on_release: 
+                root.manager.current = 'zero'
+                app.delete_all_items_en()
+
+<Popup_Store_En>:  # 팝업 정의. @Popup은 상속 의미  #ids는 직계 자식 까지만 된다. 따라서 ScreenManager까지만 접근 가능    ids can ~ child, so we can use this screen
+    popup_store_en_label_first: popup_store_en_label_first
+    title: ""
+    title_size: 0
+    separator_height: 0
+    size_hint: 0.9, 0.9
+    auto_dismiss: False
+    id: popup_root
+    ScreenManager:
+        id: popup_store_en_screen_manager
+        Screen:
+            name: "popup_first"
+            id: popup_store_first_screen
+            FloatLayout:
+                id: layout_first
+                size_hint: 1, 1           
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}  
+                Label:
+                    id: popup_store_en_label_first
+                    text : ''
+                    font_size: 60
+                    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                    color: 1, 1, 1, 1
+                    size_hint_y: None
+                    height: self.texture_size[1]+dp(5)
+                    halign: 'center'
+                    valign: 'middle'
+                    text_size: self.width, None
+                    pos_hint: {'center_x': 0.5, 'center_y':0.93}
+                Label:
+                    pos_hint: {'center_x': 0.15, 'center_y':0.78}
+                    size_hint: 1, 0.2
+                    text : 'Time'
+                    font_size: 60
+                    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                    color: 1, 1, 1, 1
+                    size_hint_y: None
+                    height: self.texture_size[1]+dp(5)
+                    halign: 'center'
+                    valign: 'middle'
+                    text_size: self.width, None
+                BoxLayout:
+                    pos_hint: {'center_x': 0.55, 'center_y':0.83}
+                    size_hint: 0.6, 0.2
+                    Button_Plus:
+                        text: "12H"
+                    Button_Plus:
+                        text: "24H"
+                Label:
+                    pos_hint: {'center_x': 0.15, 'center_y':0.63}
+                    size_hint: 1, 0.2
+                    text : 'Luck'
+                    font_size: 60
+                    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                    color: 1, 1, 1, 1
+                    size_hint_y: None
+                    height: self.texture_size[1]+dp(20)
+                    halign: 'center'
+                    valign: 'middle'
+                    text_size: self.width, None
+                BoxLayout:
+                    pos_hint: {'center_x': 0.55, 'center_y':0.68}
+                    size_hint: 0.6, 0.2
+                    Button_Plus:
+                        text: "0%"
+                    Button_Plus:
+                        text: "50%"
+                    Button_Plus:
+                        text: "100%"
+                Label:
+                    pos_hint: {'center_x': 0.15, 'center_y':0.48}
+                    size_hint: 0.5, 0.2
+                    text : 'Weather'
+                    font_size: 60
+                    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                    color: 1, 1, 1, 1
+                    size_hint_y: None
+                    height: self.texture_size[1]+dp(5)
+                    halign: 'center'
+                    valign: 'middle'
+                    text_size: self.width, None
+                BoxLayout:
+                    pos_hint: {'center_x': 0.55, 'center_y':0.53}
+                    size_hint: 0.6, 0.2
+                    Button_Plus:
+                        text: "Sunny"
+                    Button_Plus:
+                        text: "Cloudy"
+                    Button_Plus:
+                        text: "Snow"
+                    Button_Plus:
+                        text: "Rainy"
+                Label:
+                    pos_hint: {'center_x': 0.15, 'center_y':0.34}
+                    size_hint: 1, 0.2
+                    text : 'mood'
+                    font_size: 60
+                    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                    color: 1, 1, 1, 1
+                    size_hint_y: None
+                    height: self.texture_size[1]+dp(5)
+                    halign: 'center'
+                    valign: 'middle'
+                    text_size: self.width, None
+                BoxLayout:
+                    pos_hint: {'center_x': 0.55, 'center_y':0.38}
+                    size_hint: 0.6, 0.2
+                    Button_Plus:
+                        text: "A lively and energetic day"
+                    Button_Plus:
+                        text: "A quiet and peaceful day"
+                BoxLayout:
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.1}
+                    size_hint: 0.5, 0.12
+                    padding: 20
+                    spacing: 50
+                    Button:
+                        font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                        font_size: 50
+                        text: "Add to cart"
+                        size_hint: 0.15, 1
+                        on_release: 
+                            app.add_item_en()
+                            root.ids.popup_store_en_screen_manager.current = 'popup_second'
+                    Button:
+                        font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                        font_size: 50
+                        text: "Cancle"
+                        size_hint: 0.15, 1
+                        on_release: root.dismiss()
+        Screen:
+            name: "popup_second"
+            FloatLayout:
+                Label:
+                    pos_hint: {'center_x': 0.5, 'center_y':0.8}
+                    id: popup_label_second
+                    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                    font_size: 60
+                    text: "Would you like to go to your cart?"
+                BoxLayout:
+                    pos_hint: {'center_x': 0.5, 'center_y':0.2}
+                    orientation: 'horizontal'
+                    size_hint: 0.4, 0.3
+                    padding: 2
+                    spacing: dp(50)
+                    Button:
+                        font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                        font_size: 50
+                        text: "Go to Cart"
+                        size_hint: 0.33, 0.5
+                        on_release: 
+                            root.dismiss()
+                            app.change_mainscreen_tenth()
+                    Button:
+                        font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                        font_size: 50
+                        text: "Continue Shopping"
+                        size_hint: 0.37, 0.5
+                        on_release: root.dismiss()  
+
+<Popup_Pay_En>:  # 팝업 정의. @Popup은 상속 의미
+    popup_pay_en_label_first: popup_pay_en_label_first
+    title: ""
+    title_size: 0
+    separator_height: 0
+    size_hint: 0.5, 0.4
+    auto_dismiss: False
+    id: popup_root
+    ScreenManager:
+        id: popup_pay_screen_manager
+        Screen:
+            name: "popup_first"
+            id: popup_pay_first_screen
+            FloatLayout:
+                id: layout_first
+                Label:
+                    id: popup_pay_en_label_first
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+                    text : ''
+                    font_size: 70
+                    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                    color: 1, 1, 1, 1
+                    size_hint_y: None
+                    height: self.texture_size[1]+dp(20)
+                    halign: 'center'
+                    valign: 'middle'
+                    text_size: self.width, None
+                BoxLayout:
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    size_hint: 0.5, 1
+                    padding: dp(10)
+                    spacing: dp(50)
+                    Button:
+                        font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                        font_size: 45
+                        text: "Checkout"
+                        size_hint: 0.4, 0.3
+                        on_release: 
+                            root.ids.popup_pay_screen_manager.current = 'popup_second'
+                            app.close_existing_popup_en(root)
+                    Button:
+                        font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                        font_size: 45
+                        text: "  Change\n Payment\n  Method"
+                        size_hint: 0.4, 0.3
+                        on_release: root.dismiss()
+        Screen:
+            name: "popup_second"
+            FloatLayout:
+                Label:
+                    id: popup_label_second
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.75}
+                    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                    font_size: 60
+                    text: "Processing Payment"
+                Button:
+                    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+                    font_size: 30
+                    text: "Cancel"
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+                    size_hint: 0.2, 0.2
+                    on_release: 
+                        app.cancel_scheduled_popup_close()
+                        root.dismiss()
+                        app.change_mainscreen_tenth()
+
+<CartItem_En>:
+    orientation: 'horizontal'
+    padding: 10
+    spacing: 10
+    Label:
+        text: root.item_text
+        font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+        font_size: 55
+        color: 0, 0, 0, 1
+    Button:
+        background_normal: 'images_en/out_en.png'
+        background_down: 'images_en/out_en.png'
+        size_hint_x: 0.1
+        on_press: root.on_delete(root.item_text)
+
+<Button_Sub_En>: #3번째 스크린 서브 화면 버튼 
+    canvas.before:
+        Color:
+            rgba: 0, 0, 0, 1  # 검정색 스트로크 색
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [20]  # 둥근 정도 (숫자 높을수록 둥글게)
+    
+    text: f"{self.product_name} - {self.price}"
+    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+    font_size: 40
+    background_normal: ''
+    background_down: ''
+    background_color: 1, 1, 1, 1
+    color: 0, 0, 0, 0
+    size_hint: None, None
+    size: 800, 800
+    on_release: app.show_popup_store_en(self.text)
+    
+    canvas.after:
+        Color:
+            rgba: 0, 0, 0, 1  # 테두리 색 (검정)
+        Line:
+            width: 2
+            rounded_rectangle: (self.x, self.y, self.width, self.height, 20)  # 마지막 숫자가 둥글기
+
+<Button_Pay_En>: #결제 선택지 버튼
+    size_hint: (0.5, 0.9)
+    on_release: app.show_popup_pay_en(self.text)
+    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+    color: 1, 1, 1, 0
+
+<Button_Plus_En>
+    font_name: 'fonts/Pretendard/public/static/alternative/Pretendard-Bold.ttf'
+    font_size: 45
+    on_press: root.change_color()
+    size_hint: 0.5, 0.5
+
+<Sub_First_En>: #3번째 화면 내용 선택지1
+    FloatLayout:
+        Button_Sub_En:
+            pos_hint: {'right': 0.415, 'top': 0.95}
+            background_normal: 'images_en/food_en.png'
+            background_down: 'images_en/food_en.png'
+            product_name: 'A day of sharing delicious food'
+            price: 13000
+        Button_Sub_En:
+            pos_hint: {'right': 0.7, 'top': 0.95}
+            background_normal: 'images_en/parent_en.png'
+            background_down: 'images_en/parent_en.png'
+            product_name: 'The day you have a heartfelt conversation with your parents'
+            price: 15000
+        Button_Sub_En:
+            pos_hint: {'right': 0.415, 'top': 0.47}
+            background_normal: 'images_en/photo_en.png'
+            background_down: 'images_en/photo_en.png'
+            product_name: 'The day you capture memories with your friend'
+            price: 14000
+        Button_Sub_En:
+            pos_hint: {'right': 0.7, 'top': 0.47}
+            background_normal: 'images_en/date_en.png'
+            background_down: 'images_en/date_en.png'
+            product_name: 'The day you spend with your partner'
+            price: 16000
+
+<Sub_Second_En>: #3번째 화면 내용 선택지2
+    FloatLayout:
+        Button_Sub_En:
+            pos_hint: {'right': 0.415, 'top': 0.95}
+            background_normal: 'images_en/book_en.png'
+            background_down: 'images_en/book_en.png'
+            product_name: 'A day spent with your favorite book'
+            price: 13000
+        Button_Sub_En:
+            pos_hint: {'right': 0.7, 'top': 0.95}
+            background_normal: 'images_en/music_en.png'
+            background_down: 'images_en/music_en.png'
+            product_name: 'The day you relax with soothing music'
+            price: 12000
+        Button_Sub_En:
+            pos_hint: {'right': 0.415, 'top': 0.47}
+            background_normal: 'images_en/dog_en.png'
+            background_down: 'images_en/dog_en.png'
+            product_name: 'The day you enjoy a relaxing stroll'
+            price: 14000
+        Button_Sub_En:
+            pos_hint: {'right': 0.7, 'top': 0.47}
+            background_normal: 'images_en/coffee_en.png'
+            background_down: 'images_en/coffee_en.png'
+            product_name: 'A day of enjoying aromatic coffee'
+            price: 13000
+
+<Sub_Third_En>: #3번째 화면 내용 선택지3
+    FloatLayout:
+        Button_Sub_En:
+            pos_hint: {'right': 0.415, 'top': 0.95}
+            background_normal: 'images_en/cruise_en.png'
+            background_down: 'images_en/cruise_en.png'
+            product_name: 'The day you set off on a cruise'
+            price: 16000
+        Button_Sub_En:
+            pos_hint: {'right': 0.7, 'top': 0.95}
+            background_normal: 'images_en/jump_en.png'
+            background_down: 'images_en/jump_en.png'
+            product_name: 'A day for a thrilling bungee jump'
+            price: 14000
+        Button_Sub_En:
+            pos_hint: {'right': 0.415, 'top': 0.47}
+            background_normal: 'images_en/rollercoaster_en.png'
+            background_down: 'images_en/rollercoaster_en.png'
+            product_name: 'The day you ride the most exciting attraction'
+            price: 13000
+        Button_Sub_En:
+            pos_hint: {'right': 0.7, 'top': 0.47}
+            background_normal: 'images_en/sky_en.png'
+            background_down: 'images_en/sky_en.png'
+            product_name: 'A day of skydiving'
+            price: 15000
+
+<Sub_Fourth_En>: #4번째 화면 내용 선택지4
+    FloatLayout:
+        Button_Sub_En:
+            pos_hint: {'right': 0.415, 'top': 0.95}
+            background_normal: 'images_en/lotto_en.png'
+            background_down: 'images_en/lotto_en.png'
+            product_name: 'A lucky day with a lottery win'
+            price: 15000
+        Button_Sub_En:
+            pos_hint: {'right': 0.7, 'top': 0.95}
+            background_normal: 'images_en/success_en.png'
+            background_down: 'images_en/success_en.png'
+            product_name: 'A day of landing your dream job'
+            price: 14000
+        Button_Sub_En:
+            pos_hint: {'right': 0.415, 'top': 0.47}
+            background_normal: 'images_en/idea_en.png'
+            background_down: 'images_en/idea_en.png'
+            product_name: 'The day your big startup idea is born'
+            price: 12000
+        Button_Sub_En:
+            pos_hint: {'right': 0.7, 'top': 0.47}
+            background_normal: 'images_en/plan_en.png'
+            background_down: 'images_en/plan_en.png'
+            product_name: 'The day you complete all your plans'
+            price: 13000
